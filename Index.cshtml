@@ -1,0 +1,56 @@
+﻿@model List<book>
+@{
+    ViewData["title"] = "Detalis";
+}
+
+<h1>Books </h1>
+
+<div>
+
+    <table class="col-sm-6">
+
+        <tr>
+            <th class="col-sm-2">
+
+
+                @Html.DisplayNameFor(model => Model.FirstOrDefault().title)
+
+            </th>
+            <th class="col-sm-2">
+
+                @Html.DisplayNameFor(model => Model.FirstOrDefault().price)
+            </th>
+        </tr>
+
+
+
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+
+                <td class="col-sm-2">
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+
+                <td class="col-sm-2">
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+            </tr>
+            <tr>
+                <th class="col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.author)<hr class="col-sm-2" />
+                </th>
+
+                <td class="col-sm-4">
+                    @Html.DisplayFor(modelItem => item.author)<hr class="col-sm-2" />
+
+                </td>
+            </tr>
+        }
+    </table>
+      
+    </div>
+
